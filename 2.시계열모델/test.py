@@ -1,6 +1,6 @@
-import tensorflow as tf
-import numpy as np
-import matplotlib.pyplot as plt
-import sklearn
-import pandas as pd
-import flask
+import tensorflow as tf # tensorflow
+import numpy as np # numpy
+import matplotlib.pyplot as plt # matplotlib
+import sklearn # scikit-learn
+import pandas as pd # pandas
+import flask # flask
