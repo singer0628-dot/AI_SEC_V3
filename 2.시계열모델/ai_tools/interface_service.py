@@ -1,6 +1,7 @@
 #웹 모듈과 Ai 모듈 연동
 from ai_tools.crypto_coin.coin_model import (time_step,get_datas,preprocessing_datas,
                                              create_datas,convt_data,predict_datas)
+from ai_tools.smithing_anal.sms_model import preprocessing
 def get_service_data(service_datas):
     if service_datas["information"] == "coin":
         res_datas = get_datas(service_datas["coin_name"]) # 데이터 다운로드및 추출
@@ -26,3 +27,5 @@ def get_service_data(service_datas):
         # print(pred_res)#(1, 6) 내일 예측가격
         # for i in pred_res[0]:
         #     print(i)
+    elif service_datas["information"] == "sms":
+        return preprocessing(service_datas["sms_message"])
