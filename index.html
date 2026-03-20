@@ -60,9 +60,9 @@
     }
     let box_frame = (unit_obj) => `
     <div class="mbox">
-        <div class="subbox" style="width:10vw;height:10vw">
-            <p class="intro_img" style="margin:auto"><img src="${unit_obj.img}" /></p>
-            <p class="intro_lnk" style="text-align: center;"><a href="${unit_obj.link}">소스링크</a></p>
+        <div class="subbox" style="width:6vw;height:6vw">
+            <p class="intro_img" style="margin:auto"><img class="tit_img" style="wdith:5vw;height:5vw"${unit_obj.img}" /></p>
+            <p class="intro_lnk" style="text-align: center;"><a target="_blank" href="${unit_obj.link}">소스링크</a></p>
         </div>
         <div class="subbox" style="width:85vw">
         ${unit_obj.scribe}
@@ -98,5 +98,19 @@
     }
     const mycontents = document.getElementById("mycontents");
     mycontents.innerHTML = inHtml;
+    const imgs = document.getElementsByClassName("tit_img");
+    for (const it of imgs) {
+      it.addEventListener("mouseover", function () {
+        this.style.position = "absolute";
+        this.style.zIndex = "1";
+        this.style.width = "25vw";
+        this.style.height = "25vw";
+      });
+      it.addEventListener("mouseout", function () {
+        this.style.position = "static";
+        this.style.width = "5vw";
+        this.style.height = "5vw";
+      });
+    }
   </script>
 </html>
